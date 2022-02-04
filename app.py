@@ -1,6 +1,6 @@
 # Importing essential libraries
 from flask import Flask, render_template, request
-from sklearn.linear_model import base
+from sklearn.linear_model.base import _preprocess_data
 import pickle
 import numpy as np
 
