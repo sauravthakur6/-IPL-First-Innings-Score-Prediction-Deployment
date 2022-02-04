@@ -5,8 +5,8 @@ import pickle
 import numpy as np
 
 # Load the Random Forest CLassifier model
-filename = 'first-innings-score-lr-model.pkl'
-regressor = pickle.load(open(filename, 'rb'))
+
+regressor = pickle.load(open('first-innings-score-lr-model.pkl', 'rb'))
 
 app = Flask(__name__)
 
