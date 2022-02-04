@@ -1,31 +1,17 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 # Importing essential libraries
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
 
-
-# In[2]:
-
-
 # Load the Random Forest CLassifier model
-filename ='first-innings-score-lr-model.pkl'
+filename = 'first-innings-score-lr-model.pkl'
 regressor = pickle.load(open(filename, 'rb'))
 
 app = Flask(__name__)
 
-
-# In[3]:
-
-
 @app.route('/')
 def home():
-    return render_template('index.html')
+	return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -85,15 +71,6 @@ def predict():
         return render_template('result.html', lower_limit = my_prediction-10, upper_limit = my_prediction+5)
 
 
-# In[ ]:
-
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=False)
-
-
-# In[ ]:
-
-
-
-
+	app.run(debug=True)
